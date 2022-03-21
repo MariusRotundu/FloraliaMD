@@ -1301,7 +1301,7 @@ hr {
 .formular-container input, .formular-container textarea{
     font-family: 'Montserrat';
     font-size: 18px;
-    color: white;
+    color: rgb(59, 52, 52);
     width: 80%;
     margin-bottom: 10px;
     resize: none;
@@ -1309,7 +1309,7 @@ hr {
     outline: none;
     padding: 5px;
     border: 1px solid gray;
-    background-color: rgb(250, 162, 231);
+    background-color: rgb(245, 128, 219);
 
 }
 .formular-container input:focus, .formular-container textarea:focus{
