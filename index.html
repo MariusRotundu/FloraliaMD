@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta
-        keyword="Floralia; flori; comanda acum; buchete la comandă; echibane; flori de cameră; coroane florale;rame  ">
+        keyword="Floralia; flori; comanda acum; buchete la comandă; echibane; flori de cameră; coroane florale;rame; Chisinau; Moldova  ">
     <meta name="description" content=" Am început activitatea din data de 22 ianuarie 2020, cu un simplu cont de Facebook unde
             publicam poze cu lucrările noastre (Floralia.md). Buticul nostru se află pe strada Bogdan
             Voievod 1/1 și prestează servicii începând cu orele 07:00 până la 20:00. Vă așteptăm cu mare
@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="shortcut icon" href="images/undlogo.png">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <title>Floralia</title>
 </head>
 
@@ -28,7 +29,7 @@
         <div class="container">
             <div class="header__inner">
                 <div class="header__logo" data-scroll="#intro">
-                    <img class="btn1" src="images/logo1.png">
+                    <img class="btn" src="images/logo.png">
                     <!-- Floralia -->
                     
                 </div>
@@ -43,7 +44,7 @@
                     </a>
                     
                 </nav>
-
+        
                 <button class="nav-toggle" id="nav_toggle" type="button">
                     <span class="nav-toggle__item">Meniu</span>
                 </button>
@@ -53,14 +54,13 @@
 
 
     <div class="page">
-
-        <!-- Intro -->
+                <!-- Intro -->
         <div class="intro" id="intro">
             <div class="container">
                 <div class="intro__inner">
                     <h2 class="intro__suptitle">Combinația perfectă de flori pentru tine</h2>
                     <h1 class="intro__title">Bun venit la noi</h1>
-                    <img class="btn" src="images/logo.png">
+                    <img class="img" src="images/undlogo.png">
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
                             <div class="card__img">
                                 <img src="images/about/1.jpg" alt="">
                             </div>
-                            <div class="card__text"></div>
+                            <div class="card__text">Strada Bogdan Voievod 1</div>
                         </div>
                     </div>
 
@@ -97,7 +97,7 @@
                             <div class="card__img">
                                 <img src="images/about/2.jpg" alt="">
                             </div>
-                            <div class="card__text"></div>
+                            <div class="card__text">Strada Bogdan Voievod 1</div>
                         </div>
                     </div>
 
@@ -106,7 +106,7 @@
                             <div class="card__img">
                                 <img src="images/about/3.jpg" alt="">
                             </div>
-                            <div class="card__text"></div>
+                            <div class="card__text">Strada Bogdan Voievod 1</div>
                         </div>
                     </div>
                 </div>
@@ -570,11 +570,11 @@
                 <div class="formular-container">
                     <form id="formular">
                         <h3>Lasă un mesaj</h3>
-                        <input type="text" id="nume" placeholder="Nume" required>
+                        <input type="text" placeholder="Nume" required id="nume">
                         </br>
-                        <input type="text" id="email" placeholder="Email" required>
+                        <input type="email" placeholder="Email" required id="email">
                         </br>
-                        <textarea id="mesaj" rows="4" placeholder="Mesaj" required></textarea>
+                        <textarea id="mesaj" rows="4" placeholder="Mesaj" required ></textarea>
                         </br>
                         <input onclick="send()" type="button" id="transmite" value="Transmite">
 
@@ -599,7 +599,32 @@
         <img src="images/tkw.png" width="150px">
     </div>
 
+<script>
 
+emailjs.init("ZoNhVj-XzbgX0IxUo");
+function send() {
+
+    if (document.getElementById("formular").checkValidity() == false) {
+        document.getElementById("formular").reportValidity();
+        return;
+    }
+
+    var date = {
+        nume: document.getElementById("nume").value,
+        email: document.getElementById("email").value,
+        mesaj: document.getElementById("mesaj").value
+    };
+
+    emailjs.send("service_2k2538b", "template_qtr4ebs", date)
+        .then(function (raspuns) {
+            alert("Mesajul a fost transmis.")
+            document.getElementById("formular").reset();
+        }, function (error) {
+            alert("Eroare la transmitere. Contactati programatorul.")
+        })
+}
+
+</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/app.js"></script>

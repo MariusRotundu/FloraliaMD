@@ -58,7 +58,7 @@ hr {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    min-height: 820px;
+    min-height: 1000px;
     position: relative;
 
     background: url("../images/intro.jpg") center no-repeat;
@@ -76,7 +76,7 @@ hr {
 
 .intro__title {
     color: #fff;
-    font-size: 150px;
+    font-size: 100px;
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1;
@@ -277,7 +277,7 @@ hr {
     display: inline-block;
     vertical-align: top;
     padding: 4px 15px;
-
+    border-radius: 15%;
     text-transform: uppercase;
     text-decoration: none;
 
@@ -285,12 +285,12 @@ hr {
 }
 
 .btn:hover {
-    background-color: #fff;
+    background-color: rgb(99, 182, 250);
     color: #333;
 }
 
 .btn1 {
-    display: flex;
+    display: inline-block;
     vertical-align: top;
     padding: 4px 15px;
 
@@ -300,10 +300,6 @@ hr {
     transition: background .1s linear, color .1s linear;
 }
 
-.btn1:hover {
-    background-color: #fff;
-    color: #333;
-}
 
 /* Slider */
 .slider {
@@ -1726,4 +1722,14 @@ hr {
         width: 100%;
     }
 
+}
+@media (max-width: 1260px){
+    section{
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+    .container-galerie img{
+        width: 160px;
+        height: 160px;
+    }
 }
